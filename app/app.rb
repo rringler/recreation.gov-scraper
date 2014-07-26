@@ -6,13 +6,5 @@ module RecreationGovScraper
     register Padrino::Helpers
 
     enable :sessions
-
-    get '/' do
-      render 'pages/home'
-    end
-
-    get '/about' do
-      render 'pages/about'
-    end
   end
 end

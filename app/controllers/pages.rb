@@ -1,21 +1,12 @@
 RecreationGovScraper::App.controllers :pages do
 
-  # get :index, :map => '/foo/bar' do
-  #   session[:foo] = 'bar'
-  #   render 'index'
-  # end
+  get :index, map: '/' do
+    @query = Query.latest
 
-  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
-  #   case content_type
-  #     when :js then ...
-  #     else ...
-  # end
+    render 'home'
+  end
 
-  # get :foo, :with => :id do
-  #   'Maps to url '/foo/#{params[:id]}''
-  # end
-
-  # get '/example' do
-  #   'Hello world!'
-  # end
+  get :about, map: '/about' do
+    render 'about'
+  end
 end
