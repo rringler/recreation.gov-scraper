@@ -1,0 +1,17 @@
+!!! Strict
+%html
+  %head
+    %title= [@title, "Recreation.gov Scraper"].compact.join(" | ")
+    = stylesheet_link_tag 'reset', 'application', 'sticky_footer'
+    = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lobster'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Vollkorn'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Nobile'
+    = javascript_include_tag 'jquery', 'application'
+    = yield_content :include
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+  %body
+    = partial 'layouts/navbar'
+    %main.container
+      = yield
+    = partial 'layouts/footer'
