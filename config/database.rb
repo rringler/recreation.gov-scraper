@@ -16,8 +16,8 @@
 ActiveRecord::Base.configurations[:development] = {
   :adapter   => 'postgresql',
   :database  => 'recreation_gov_scraper_development',
-  :username  => 'root',
-  :password  => '',
+  # :username  => '',
+  # :password  => '',
   :host      => 'localhost',
   :port      => 5432
 
