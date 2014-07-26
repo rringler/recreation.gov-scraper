@@ -13,6 +13,7 @@ source 'https://rubygems.org'
 # Project requirements
 gem 'rake'
 gem 'dotenv'
+gem 'mechanize'
 
 # Component requirements
 gem 'slim'
