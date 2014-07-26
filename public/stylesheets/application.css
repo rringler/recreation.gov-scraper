@@ -1,6 +1,6 @@
 body {
   padding-top: 70px;
-  background: url(image_path("fabric_of_squares_gray.png")) repeat 0 0; }
+  background: url("../images/fabric_of_squares_gray.png") repeat 0 0; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Vollkorn', Georgia, Times, serif; }
@@ -11,8 +11,8 @@ h1, h2 {
 p, div {
   font-family: 'Nobile', Helvetica, Arial, sans-serif; }
 
-.btn i {
-  padding-right: 4px; }
+table {
+  margin-top: 30px; }
 
 .centered, .col-centered {
   float: none;
