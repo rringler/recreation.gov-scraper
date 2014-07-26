@@ -1,2 +1,19 @@
-%h1
-  Hello World
+.row
+  .col-sm-6.col-sm-offset-3.text-center
+    %h1
+      Lower Pines Campgrounds
+    %p
+      Last updated at:
+      = @query.created_at.localtime.strftime("%-d-%b-%Y - %l:%M%P %Z")
+.row
+  .col-sm-4.col-sm-offset-4
+    %table.table.table-condensed.table-responsive.table-striped
+      %thead
+        %tr
+          %th.text-left Camp Site
+          %th.text-right Open Date
+      %tbody
+        - @query.availabilities.order(:site).each do |availability|
+          %tr
+            %td.text-left= availability.site
+            %td.text-right= availability.date
