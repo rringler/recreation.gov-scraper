@@ -6,15 +6,14 @@
       Last updated at:
       = @query.created_at.localtime.strftime("%-d-%b-%Y - %l:%M%P %Z")
 .row
-  .col-sm-4.col-sm-offset-4
-    %table.table.table-condensed.table-responsive.table-striped
+  .col-sm-6.col-sm-offset-3
+    %table.table.table-condensed.table-responsive.table-striped.tablesorter
       %thead
         %tr
-          %th.text-left Camp Site
+          %th Camp Site
           %th.text-right Open Date
       %tbody
         - @query.availabilities.order(:site).each do |availability|
           %tr
-            %td.text-left= availability.site
-            %td.text-right
-              = link_to availability.date,  availability.url
+            %td= availability.site
+            %td.text-right= link_to availability.date,  availability.url

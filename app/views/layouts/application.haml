@@ -2,15 +2,19 @@
 %html
   %head
     %title= [@title, "Recreation.gov Scraper"].compact.join(" | ")
-    = stylesheet_link_tag 'application', 'sticky_footer'
     = stylesheet_link_tag '//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css'
+    = stylesheet_link_tag 'application', 'sticky_footer', 'tablesorter'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lobster'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Vollkorn'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Nobile'
     = favicon_tag "/favicon-96x96.png", sizes: "96x96"
     = favicon_tag "/favicon-32x32.png", sizes: "32x32"
     = favicon_tag "/favicon-16x16.png", sizes: "16x16"
-    = javascript_include_tag 'jquery', 'application'
+    = javascript_include_tag 'jquery', |
+                             'jquery-ujs', |
+                             'jquery.metadata', |
+                             'jquery.tablesorter.min', |
+                             'application'
     = yield_content :include
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
   %body

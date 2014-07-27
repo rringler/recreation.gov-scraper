@@ -13,6 +13,8 @@ p, div {
 
 table {
   margin-top: 30px; }
+  table tr th.text-right {
+    padding-right: 25px; }
 
 .centered, .col-centered {
   float: none;
