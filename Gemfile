@@ -5,7 +5,7 @@ ruby '2.1.2'
 # gemspec
 
 # Server requirements
-# gem 'thin' # or mongrel
+gem 'unicorn'
 # gem 'trinidad', :platform => 'jruby'
 
 # Optional JSON codec (faster performance)
