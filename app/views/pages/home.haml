@@ -4,7 +4,10 @@
       Lower Pines Campgrounds
     %p
       Last updated at:
-      = @query.created_at.localtime.strftime("%-d-%b-%Y - %l:%M%P %Z")
+      %span
+        %time{datetime: @query.created_at.iso8601, |
+              "data-localtime-format" => "dd-MMM-yyyy h:mmtt Z"}
+
 .row
   .col-sm-6.col-sm-offset-3
     %table.table.table-condensed.table-responsive.table-striped.tablesorter
