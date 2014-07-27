@@ -9,9 +9,12 @@ task :query => :environment do
 
   query = Query.create
 
-  open_dates.each do |site, dates|
-    dates.each do |date|
-      query.availabilities.create(site: site, date: date)
+  open_dates.each do |site, urls|
+    urls.each do |url|
+      date     = /arvdate=([\d\/]+)/.match(url)[1]
+      full_url = "http://www.recreation.gov" + url
+
+      query.availabilities.create(site: site, date: date, url: full_url)
     end
   end
 end
@@ -68,19 +71,19 @@ def scrape_pages(url)
 end
 
 # accepts an array of Mechanize::Page objects
-# returns a hash of site openings.  key: site, value: array of dates
+# returns a hash of site openings.  key: site, value: array of urls
 def find_open_dates(pages)
   open_dates = Hash.new([])
 
   pages.each do |page|
     page.search("a.avail").each do |link|
       site = link.parent.parent.at_css("td.sn div.siteListLabel a").text.to_sym
-      date = /arvdate=([\d\/]+)/.match(link.attr('href'))[1]
+      url  = link.attr('href')
 
       if open_dates[site].empty?
-        open_dates[site] = [date]
+        open_dates[site] = [url]
       else
-        open_dates[site] << date
+        open_dates[site] << url
       end
     end
   end
