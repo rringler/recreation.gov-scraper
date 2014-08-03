@@ -40,6 +40,10 @@ namespace :data do
       pages << pages.last.link_with(id: 'nextWeek').click
       sleep(0.5)
       pages << pages.last.link_with(id: 'nextWeek').click
+      sleep(0.5)
+      pages << pages.last.link_with(id: 'nextWeek').click
+      sleep(0.5)
+      pages << pages.last.link_with(id: 'nextWeek').click
     end
 
     pages
