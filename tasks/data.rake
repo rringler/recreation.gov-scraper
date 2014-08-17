@@ -22,7 +22,7 @@ namespace :data do
 
   desc "Purge older data from the database"
   task :purge => :environment do
-    puts Query.older.destroy!
+    Query.older.destroy_all
   end
 
   # helpers
